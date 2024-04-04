@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using NUnit.Framework;
+﻿using System.Collections.Generic;
 
 namespace Examples.Chapter2
 {
@@ -29,7 +26,7 @@ namespace Examples.Chapter2
          var list = Enumerable.Range(1, 10).Select(i => i * 3).ToList();
 
          list.Sort(alphabetically);
-         Assert.AreEqual(new List<int>() { 12, 15, 18, 21, 24, 27, 3, 30, 6, 9 }
+         ClassicAssert.AreEqual(new List<int>() { 12, 15, 18, 21, 24, 27, 3, 30, 6, 9 }
             , list);
       }
    }

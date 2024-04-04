@@ -1,7 +1,4 @@
-﻿using LaYumba.Functional;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace StatefulComputations
 {
@@ -97,7 +94,8 @@ namespace StatefulComputations
       {
          var a = new ValueTuple();
          var b = new ValueTuple();
-         Assert.AreEqual(a, b);
+         ClassicAssert.AreEqual(a, b);
+
       }
 
       [Test] public static void Test()
@@ -126,7 +124,7 @@ namespace StatefulComputations
 
          Trade[] actual = BidOfferMatcher.Match(bid, offers).ToArray();
 
-         Assert.AreEqual(expected, actual);
+         ClassicAssert.AreEqual(expected, actual);
       }
    }
 }

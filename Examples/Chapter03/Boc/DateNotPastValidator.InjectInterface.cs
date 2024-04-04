@@ -63,7 +63,7 @@ namespace Examples.Chapter03.Boc.InjectInterface
          {
             Date = presentDate.AddDays(-1)
          };
-         Assert.AreEqual(false, sut.IsValid(transfer));
+         ClassicAssert.AreEqual(false, sut.IsValid(transfer));
       }
 
       // parameterized unit test

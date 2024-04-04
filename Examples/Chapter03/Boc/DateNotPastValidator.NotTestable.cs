@@ -25,7 +25,7 @@ namespace Examples.Chapter03.Boc.NotTestable
          };
 
          var actual = sut.IsValid(transfer);
-         Assert.AreEqual(true, actual);
+         ClassicAssert.AreEqual(true, actual);
       }
    }
 }

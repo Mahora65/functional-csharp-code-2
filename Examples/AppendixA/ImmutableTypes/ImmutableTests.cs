@@ -19,8 +19,8 @@ namespace Examples.AppendixA.Immutable
       {
          var @new = original.With("B", 777);
 
-         Assert.AreEqual(777, @new.B); // updated
-         Assert.AreEqual("hello", @new.C); // same as original
+         ClassicAssert.AreEqual(777, @new.B); // updated
+         ClassicAssert.AreEqual("hello", @new.C); // same as original
       }
 
       [Test]
@@ -28,8 +28,8 @@ namespace Examples.AppendixA.Immutable
       {
          var @new = original.With("B", 777);
 
-         Assert.AreEqual(123, original.B);
-         Assert.AreEqual("hello", original.C);
+         ClassicAssert.AreEqual(123, original.B);
+         ClassicAssert.AreEqual("hello", original.C);
       }
    }
 
@@ -43,11 +43,11 @@ namespace Examples.AppendixA.Immutable
       {
          var @new = original.With(a => a.C, "hi");
 
-         Assert.AreEqual(123, original.B);
-         Assert.AreEqual("hello", original.C);
+         ClassicAssert.AreEqual(123, original.B);
+         ClassicAssert.AreEqual("hello", original.C);
 
-         Assert.AreEqual(123, @new.B);
-         Assert.AreEqual("hi", @new.C);
+         ClassicAssert.AreEqual(123, @new.B);
+         ClassicAssert.AreEqual("hi", @new.C);
       }
 
       [Test]
@@ -57,7 +57,7 @@ namespace Examples.AppendixA.Immutable
             .With(a => a.B, 345)
             .With(a => a.C, "howdy");
 
-         Assert.AreEqual(345, @new.B);
-         Assert.AreEqual("howdy", @new.C);      }
+         ClassicAssert.AreEqual(345, @new.B);
+         ClassicAssert.AreEqual("howdy", @new.C);      }
    }
 }

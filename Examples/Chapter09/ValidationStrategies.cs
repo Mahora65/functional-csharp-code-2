@@ -43,13 +43,13 @@ namespace Boc.Chapter9
       public class FailFastTest
       {
          [Test]
-         public void WhenAllValidatorsSucceed_ThenSucceed() => Assert.AreEqual(
+         public void WhenAllValidatorsSucceed_ThenSucceed() => ClassicAssert.AreEqual(
             actual: FailFast(List(Success, Success))(1),
             expected: Valid(1)
          );
 
          [Test]
-         public void WhenNoValidators_ThenSucceed() => Assert.AreEqual(
+         public void WhenNoValidators_ThenSucceed() => ClassicAssert.AreEqual(
             actual: FailFast(List<Validator<int>>())(1),
             expected: Valid(1)
          );
@@ -58,25 +58,25 @@ namespace Boc.Chapter9
          public void WhenOneValidatorFails_ThenFail() =>
             FailFast(List(Success, Failure))(1).Match(
                Valid: (_) => Assert.Fail(),
-               Invalid: (errs) => Assert.AreEqual(1, errs.Count()));
+               Invalid: (errs) => ClassicAssert.AreEqual(1, errs.Count()));
 
          [Test]
          public void WhenSeveralValidatorsFail_ThenFail() =>
             FailFast(List(Success, Failure, Failure, Success))(1).Match(
                Valid: (_) => Assert.Fail(),
-               Invalid: (errs) => Assert.AreEqual(1, errs.Count())); // only the first error is returned
+               Invalid: (errs) => ClassicAssert.AreEqual(1, errs.Count())); // only the first error is returned
       }
 
       public class HarvestErrorsTest
       {
          [Test]
-         public void WhenAllValidatorsSucceed_ThenSucceed() => Assert.AreEqual(
+         public void WhenAllValidatorsSucceed_ThenSucceed() => ClassicAssert.AreEqual(
             actual: HarvestErrors(List(Success, Success))(1),
             expected: Valid(1)
          );
 
          [Test]
-         public void WhenNoValidators_ThenSucceed() => Assert.AreEqual(
+         public void WhenNoValidators_ThenSucceed() => ClassicAssert.AreEqual(
             actual: HarvestErrors(List<Validator<int>>())(1),
             expected: Valid(1)
          );
@@ -85,13 +85,13 @@ namespace Boc.Chapter9
          public void WhenOneValidatorFails_ThenFail() =>
             HarvestErrors(List(Success, Failure))(1).Match(
                Valid: (_) => Assert.Fail(),
-               Invalid: (errs) => Assert.AreEqual(1, errs.Count()));
+               Invalid: (errs) => ClassicAssert.AreEqual(1, errs.Count()));
 
          [Test]
          public void WhenSeveralValidatorsFail_ThenFail() =>
             HarvestErrors(List(Success, Failure, Failure, Success))(1).Match(
                Valid: (_) => Assert.Fail(),
-               Invalid: (errs) => Assert.AreEqual(2, errs.Count())); // all errors are returned
+               Invalid: (errs) => ClassicAssert.AreEqual(2, errs.Count())); // all errors are returned
       }
    }
 }

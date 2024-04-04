@@ -21,8 +21,7 @@ class FunctionsAsFirstClassValues
       var range = Range(1, 3);
       var triples = range.Select(triple);
 
-      Assert.AreEqual(new List<int>() { 3, 6, 9 }
-         , triples);
+      Assert.That(new List<int>() {3, 6, 9 }, Is.EqualTo(triples));
    }
 }
 
@@ -37,9 +36,9 @@ public class MutationShouldBeAvoided
       var sorted = original.OrderBy(x => x);
       var filtered = original.Where(isOdd);
 
-      Assert.AreEqual(new[] { 7, 6, 1 }, original);
-      Assert.AreEqual(new[] { 1, 6, 7 }, sorted);
-      Assert.AreEqual(new[] { 7, 1 }, filtered);
+      Assert.That(new[] { 7, 6, 1 }, Is.EqualTo(original));
+      Assert.That(new[] { 1, 6, 7 }, Is.EqualTo(sorted));
+      Assert.That(new[] { 7, 1 }, Is.EqualTo(filtered));
    }
 
    [Test]
@@ -47,7 +46,7 @@ public class MutationShouldBeAvoided
    {
       int[] original = { 5, 7, 1 };
       Array.Sort(original);
-      Assert.AreEqual(new[] { 1, 5, 7 }, original);
+      Assert.That(new[] { 1, 5, 7 }, Is.EqualTo(original));
    }
 
    static readonly int[] nums = Range(-10000, 20001).Reverse().ToArray();

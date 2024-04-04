@@ -145,7 +145,7 @@ namespace Exercises.Chapter12.Solutions
             ))
          ));
 
-         Assert.AreEqual(expected, localizedTree);
+         ClassicAssert.AreEqual(expected, localizedTree);
       }
    } 
 }

@@ -22,7 +22,7 @@ namespace Examples.Chapter03.Boc.InjectFunc
          var sut = new DateNotPastValidator(() => today);
          var transfer = MakeTransfer.Dummy with { Date = today };
 
-         Assert.AreEqual(true, sut.IsValid(transfer));
+         ClassicAssert.AreEqual(true, sut.IsValid(transfer));
       }
    }
 }

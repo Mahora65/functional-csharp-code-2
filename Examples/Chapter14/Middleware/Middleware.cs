@@ -63,8 +63,8 @@ namespace Examples.Chapter14
          var pipeline = from b in MwB
                         select b + "end";
 
-         Assert.AreEqual("bend", pipeline.Run());
-         Assert.AreEqual(new List<string> { "Entering B", "Exiting B" }, sideEffects);
+         ClassicAssert.AreEqual("bend", pipeline.Run());
+         ClassicAssert.AreEqual(new List<string> { "Entering B", "Exiting B" }, sideEffects);
       }
 
       [Test] public void TestPipelineWith2Clauses()
@@ -73,8 +73,8 @@ namespace Examples.Chapter14
                         from b in MwB
                         select b + "end";
 
-         Assert.AreEqual("bend", pipeline.Run());
-         Assert.AreEqual(new List<string> { "Entering A", "Entering B", "Exiting B", "Exiting A" }, sideEffects);
+         ClassicAssert.AreEqual("bend", pipeline.Run());
+         ClassicAssert.AreEqual(new List<string> { "Entering A", "Entering B", "Exiting B", "Exiting A" }, sideEffects);
       }
 
       [Test] public void TestPipelineWith3Clauses()
@@ -84,8 +84,8 @@ namespace Examples.Chapter14
                         from c in MwB
                         select b + c + "end";
 
-         Assert.AreEqual("bbend", pipeline.Run());
-         Assert.AreEqual(new List<string> { "Entering A", "Entering B", "Entering B", "Exiting B", "Exiting B", "Exiting A" }, sideEffects);
+         ClassicAssert.AreEqual("bbend", pipeline.Run());
+         ClassicAssert.AreEqual(new List<string> { "Entering A", "Entering B", "Entering B", "Exiting B", "Exiting B", "Exiting A" }, sideEffects);
       }
 
       [Test] public void TestPipelineWith4Clauses()
@@ -96,7 +96,7 @@ namespace Examples.Chapter14
                         from c in MwB
                         select b + c + "end";
 
-         Assert.AreEqual("bbend", pipeline.Run());
+         ClassicAssert.AreEqual("bbend", pipeline.Run());
       }
    }
 }

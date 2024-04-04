@@ -26,7 +26,7 @@ namespace Boc.Chapter19
 
          var response = controller.MakeTransfer(makeTransfer).Result;
 
-         Assert.AreEqual(typeof(BadRequestObjectResult), response.GetType());
+         ClassicAssert.AreEqual(typeof(BadRequestObjectResult), response.GetType());
       }
 
       [Test]
@@ -48,8 +48,8 @@ namespace Boc.Chapter19
 
          var response = controller.MakeTransfer(makeTransfer).Result;
 
-         Assert.IsFalse(changesPersisted);
-         Assert.AreEqual(typeof(BadRequestObjectResult), response.GetType());
+         ClassicAssert.IsFalse(changesPersisted);
+         ClassicAssert.AreEqual(typeof(BadRequestObjectResult), response.GetType());
       }
 
       [Test]
@@ -81,8 +81,8 @@ namespace Boc.Chapter19
             Amount = 1200
          }).Result;
 
-         Assert.IsFalse(changesPersisted);
-         Assert.AreEqual(typeof(BadRequestObjectResult), response.GetType());
+         ClassicAssert.IsFalse(changesPersisted);
+         ClassicAssert.AreEqual(typeof(BadRequestObjectResult), response.GetType());
       }
 
       [Test]
@@ -114,8 +114,8 @@ namespace Boc.Chapter19
             Amount = 200
          }).Result;
 
-         Assert.IsTrue(changesPersisted);
-         Assert.AreEqual(typeof(OkObjectResult), response.GetType());
+         ClassicAssert.IsTrue(changesPersisted);
+         ClassicAssert.AreEqual(typeof(OkObjectResult), response.GetType());
       }
 
       [Test]
@@ -147,8 +147,8 @@ namespace Boc.Chapter19
             Amount = 200
          }).Result;
 
-         Assert.IsFalse(changesPersisted);
-         Assert.AreEqual(typeof(ObjectResult), response.GetType());
+         ClassicAssert.IsFalse(changesPersisted);
+         ClassicAssert.AreEqual(typeof(ObjectResult), response.GetType());
       }
 
       [Test]
@@ -185,8 +185,8 @@ namespace Boc.Chapter19
          var x = controller.MakeTransfer(cmd).Result;
          var y = controller.MakeTransfer(cmd).Result;
 
-         Assert.AreEqual(2, changesPersisted);
-         Assert.AreEqual(1, accountLoaded);
+         ClassicAssert.AreEqual(2, changesPersisted);
+         ClassicAssert.AreEqual(1, accountLoaded);
       }
 
       [Test]
@@ -212,7 +212,7 @@ namespace Boc.Chapter19
             Amount = 200
          }).Result;
 
-         Assert.AreEqual(typeof(ObjectResult), response.GetType());
+         ClassicAssert.AreEqual(typeof(ObjectResult), response.GetType());
       }
    }
 }

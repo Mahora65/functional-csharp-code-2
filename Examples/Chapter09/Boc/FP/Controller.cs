@@ -55,7 +55,7 @@ namespace Boc.Chapter9
 
          var result = controller.MakeTransfer(MakeTransfer.Dummy);
 
-         Assert.AreEqual(typeof(Microsoft.AspNetCore.Mvc.OkResult), result.GetType());
+         ClassicAssert.AreEqual(typeof(Microsoft.AspNetCore.Mvc.OkResult), result.GetType());
       }
    }
 }

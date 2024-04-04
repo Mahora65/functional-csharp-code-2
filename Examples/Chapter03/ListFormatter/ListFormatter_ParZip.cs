@@ -23,7 +23,7 @@ namespace Examples.Chapter3.ListFormatter.Parallel.WithRange
       {
          var input = new List<string> { "coffee beans" };
          var output = ListFormatter.Format(input).ToList();
-         Assert.AreEqual("1. Coffee beans", output[0]);
+         ClassicAssert.AreEqual("1. Coffee beans", output[0]);
       }
 
       [Test]

@@ -1,6 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
     <PackageId>LaYumba.Functional</PackageId>
     <PackageVersion>2.0.0</PackageVersion>
     <PackageProjectUrl>https://github.com/la-yumba/functional-csharp-code-2</PackageProjectUrl>
@@ -11,6 +10,8 @@
     <Copyright>Copyright 2021 (c) Enrico Buonanno. All rights reserved.</Copyright>
     <PackageTags>functional programming</PackageTags>
     <Nullable>enable</Nullable>
+    <TargetFrameworks>net6.0;net8.0</TargetFrameworks>
+    <LangVersion>12</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.Reactive" Version="5.0.0" />

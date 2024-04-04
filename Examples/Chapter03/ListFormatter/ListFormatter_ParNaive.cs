@@ -60,7 +60,7 @@ namespace Examples.Chapter3.ListFormatter.Parallel.Naive
          var size = 100000;
          var input = Enumerable.Range(1, size).Select(i => $"item {i}").ToList();
          var output = new ListFormatter().Format(input);
-         Assert.AreEqual("100000. Item 100000", output[size - 1]);
+         ClassicAssert.AreEqual("100000. Item 100000", output[size - 1]);
       }
    }
 }

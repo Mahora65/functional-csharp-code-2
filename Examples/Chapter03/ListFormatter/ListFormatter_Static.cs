@@ -38,7 +38,7 @@ namespace Examples.Chapter3.ListFormatter.Static
       {
          var input = new List<string> { "coffee beans" };
          var output = ListFormatter.Format(input);
-         Assert.AreEqual("1. Coffee beans", output[0]);
+         ClassicAssert.AreEqual("1. Coffee beans", output[0]);
       }
 
       [Test]
@@ -46,8 +46,8 @@ namespace Examples.Chapter3.ListFormatter.Static
       {
          var input = new List<string> { "coffee beans", "BANANAS" };
          var output = ListFormatter.Format(input);
-         Assert.AreEqual("1. Coffee beans", output[0]);
-         Assert.AreEqual("2. Bananas", output[1]);
+         ClassicAssert.AreEqual("1. Coffee beans", output[0]);
+         ClassicAssert.AreEqual("2. Bananas", output[1]);
       }
 
       [Test]
@@ -56,7 +56,7 @@ namespace Examples.Chapter3.ListFormatter.Static
          var size = 100000;
          var input = Enumerable.Range(1, size).Select(i => $"item{i}").ToList();
          var output = ListFormatter.Format(input);
-         Assert.AreEqual("100000. Item100000", output[size - 1]);
+         ClassicAssert.AreEqual("100000. Item100000", output[size - 1]);
       }
    }
 }

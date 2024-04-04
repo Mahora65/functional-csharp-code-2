@@ -35,12 +35,12 @@ namespace Examples.Chapter11
       }
 
       [Test]
-      public static void WhenAValueIsAvailable_LookupReturnsSome() => Assert.AreEqual(
+      public static void WhenAValueIsAvailable_LookupReturnsSome() => ClassicAssert.AreEqual(
          actual: GetConfig().Lookup("somekey"),
          expected: Some("somevalue"));
 
       [Test]
-      public static void WhenAValueIsNotAvailable_LookupReturnsNone() => Assert.AreEqual(
+      public static void WhenAValueIsNotAvailable_LookupReturnsNone() => ClassicAssert.AreEqual(
          actual: GetConfig().Lookup("_"),
          expected: None);
    }

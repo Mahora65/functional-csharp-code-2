@@ -45,13 +45,13 @@ namespace Boc.Chapter17
          static readonly Validator<int> Failure = _ => Error("Invalid");
 
          [Test]
-         public void WhenAllValidatorsSucceed_ThenSucceed() => Assert.AreEqual(
+         public void WhenAllValidatorsSucceed_ThenSucceed() => ClassicAssert.AreEqual(
             actual: HarvestErrorsTr(Success, Success)(1),
             expected: Valid(1)
          );
 
          [Test]
-         public void WhenNoValidators_ThenSucceed() => Assert.AreEqual(
+         public void WhenNoValidators_ThenSucceed() => ClassicAssert.AreEqual(
             actual: HarvestErrorsTr<int>()(1),
             expected: Valid(1)
          );
@@ -60,13 +60,13 @@ namespace Boc.Chapter17
          public void WhenOneValidatorFails_ThenFail() =>
             HarvestErrorsTr(Success, Failure)(1).Match(
                Valid: (_) => Assert.Fail(),
-               Invalid: (errs) => Assert.AreEqual(1, errs.Count()));
+               Invalid: (errs) => ClassicAssert.AreEqual(1, errs.Count()));
 
          [Test]
          public void WhenSeveralValidatorsFail_ThenFail() =>
             HarvestErrorsTr(Success, Failure, Failure, Success)(1).Match(
                Valid: (_) => Assert.Fail(),
-               Invalid: (errs) => Assert.AreEqual(2, errs.Count())); // all errors are returned
+               Invalid: (errs) => ClassicAssert.AreEqual(2, errs.Count())); // all errors are returned
       }
    }
 }

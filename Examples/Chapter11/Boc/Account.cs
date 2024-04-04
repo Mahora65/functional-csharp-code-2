@@ -78,7 +78,7 @@ namespace Examples.Chapter11
 
       [Test]
       public static void WhenInitializedWithNull_ThenHasEmptyList()
-         => Assert.AreEqual(0, new AccountState("EUR").TransactionHistory.Count());
+         => ClassicAssert.AreEqual(0, new AccountState("EUR").TransactionHistory.Count());
 
       [Test]
       public static void WithOnlyChangesTheSpecifiedFields()
@@ -86,9 +86,9 @@ namespace Examples.Chapter11
          var original = new AccountState(Currency: "EUR");
          var activated = original.Activate();
 
-         Assert.AreEqual(AccountStatus.Requested, original.Status);
-         Assert.AreEqual(AccountStatus.Active, activated.Status);
-         Assert.AreEqual(original.Currency, activated.Currency);
+         ClassicAssert.AreEqual(AccountStatus.Requested, original.Status);
+         ClassicAssert.AreEqual(AccountStatus.Active, activated.Status);
+         ClassicAssert.AreEqual(original.Currency, activated.Currency);
       }
 
       [Test]
@@ -102,8 +102,8 @@ namespace Examples.Chapter11
          );
          mutable.Add(new(-1000, "Create trouble", DateTime.Now));
 
-         Assert.AreEqual(1, mutable.Count);
-         Assert.AreEqual(0, account.TransactionHistory.Count());
+         ClassicAssert.AreEqual(1, mutable.Count);
+         ClassicAssert.AreEqual(0, account.TransactionHistory.Count());
       }
    }
 }

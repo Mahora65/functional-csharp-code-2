@@ -25,8 +25,8 @@ namespace Examples.Chapter6
          Option<string> empty = None;
          Option<string> optJohn = Some("John");
 
-         Assert.AreEqual(None, empty.Map(greet));
-         Assert.AreEqual(Some("hello, John"), optJohn.Map(greet));
+         ClassicAssert.AreEqual(None, empty.Map(greet));
+         ClassicAssert.AreEqual(Some("hello, John"), optJohn.Map(greet));
       }
 
       Option<Risk> RiskOf(Subject subject)

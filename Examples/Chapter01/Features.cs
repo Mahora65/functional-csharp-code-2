@@ -38,8 +38,8 @@ namespace Examples.Chapter1
          public static void Test()
          {
             var pair = "EURUSD".AsPair();
-            Assert.AreEqual("EUR", pair.Base);
-            Assert.AreEqual("USD", pair.Quote);
+            ClassicAssert.AreEqual("EUR", pair.Base);
+            ClassicAssert.AreEqual("USD", pair.Quote);
          }
       }
    }
