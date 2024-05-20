@@ -57,6 +57,15 @@ namespace Exercises.Chapter2
          var actual = list.QSort();
          ClassicAssert.AreEqual(expected, actual);
       }
+      
+      [Test]
+      public static void TestMSort()
+      {
+         var list = new List<int> {-100, 63, 30, 45, 1, 1000, -23, -67, 1, 2, 56, 75, 975, 432, -600, 193, 85, 12};
+         var expected = new List<int> {-600, -100, -67, -23, 1, 1, 2, 12, 30, 45, 56, 63, 75, 85, 193, 432, 975, 1000};
+         var actual = list.MSort();
+         ClassicAssert.AreEqual(expected, actual);
+      }
 
       // 3.
       static List<T> QuickSort<T>(this List<T> list, Comparison<T> compare)
